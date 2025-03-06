@@ -131,7 +131,10 @@ document.addEventListener('mousemove', moveBucket);
 setInterval(createObject, 1000);
 setInterval(createDeathObject, 1500);
 </script>
+Here are some memes [download](https://github.com/user-attachments/assets/39fd9144-53f2-4682-9ff6-f5bd0ac39703)
+![download](https://github.com/user-attachments/assets/207d1601-6afb-41af-80b8-61123eee9fd6)
+![download](https://github.com/user-attachments/assets/dfa763bb-990f-4de0-9c43-aa0cb329d833)
 
-</body>
+</body>!
 </html>"></script> </body>
 </html>
