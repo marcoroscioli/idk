@@ -126,14 +126,41 @@ function moveBucket(e) {
 }
 
 document.addEventListener('mousemove', moveBucket);
+function moveBucket(e) {
+    bucketX += e.movementX;
+    bucketX = Math.max(0, Math.min(bucketX, window.innerWidth - bucket.offsetWidth));
+    bucket.style.left = bucketX + 'px';
+  }
+
+  function restartGame() {
+    score = 0;
+    lives = 3;
+    scoreDisplay.textContent = "Score: " + score;
+    livesDisplay.textContent = "Lives: " + lives;
+    //Remove all existing objects from the game
+    const objects = document.querySelectorAll('.object, .death-object');
+    objects.forEach(object => object.remove());
+
+  }
+
+  document.addEventListener('mousemove', moveBucket);
+  setInterval(createObject, 1000);
+  setInterval(createDeathObject, 1500);
 
 
-setInterval(createObject, 1000);
-setInterval(createDeathObject, 1500);
-</script>
-Here are some memes [download](https://github.com/user-attachments/assets/39fd9144-53f2-4682-9ff6-f5bd0ac39703)
-![download](https://github.com/user-attachments/assets/207d1601-6afb-41af-80b8-61123eee9fd6)
-![download](https://github.com/user-attachments/assets/dfa763bb-990f-4de0-9c43-aa0cb329d833)
+  //Added Game restart functionality
+  document.addEventListener('mousemove', moveBucket);
+  setInterval(createObject, 1000);
+  setInterval(createDeathObject, 1500);
+
+  // Check lives after each collision with a death object
+  let deathObjectInterval = setInterval(() => {
+    if (lives === 0) {
+      clearInterval(deathObjectInterval); // Stop checking lives
+      alert('Game Over!');
+      restartGame(); //added restart function call
+    }
+  }, 100); // Check every 100ms
 
 </body>!
 </html>"></script> </body>
