@@ -148,20 +148,6 @@ function moveBucket(e) {
   setInterval(createDeathObject, 1500);
 
 
-  //Added Game restart functionality
-  document.addEventListener('mousemove', moveBucket);
-  setInterval(createObject, 1000);
-  setInterval(createDeathObject, 1500);
-
-  // Check lives after each collision with a death object
-  let deathObjectInterval = setInterval(() => {
-    if (lives === 0) {
-      clearInterval(deathObjectInterval); // Stop checking lives
-      alert('Game Over!');
-      restartGame(); //added restart function call
-    }
-  }, 100); // Check every 100ms
-
 </body>!
 </html>"></script> </body>
 </html>
